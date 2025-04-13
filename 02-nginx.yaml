@@ -1,14 +1,14 @@
-- name: install and run nginx
+- name: uninstalled nginx and disable
   hosts: web
   become: yes
   tasks:
-  - name: install nginx
+  - name: uninstall nginx
     ansible.builtin.dnf:
       name: nginx
-      state: latest
+      state: absent
 
-  - name: run the ngnix
+  - name: disable nginx service
     ansible.builtin.service:
       name: nginx
-      state: started
-      enabled: true   
+      state: stop
+      disable: yes    
