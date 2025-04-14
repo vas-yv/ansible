@@ -1,10 +1,10 @@
 - name: variable preferences
-  hosts: web
+  hosts: localhost
   vars:
     wishes: "morning from play level"
   vars_files:
   - vars.yaml
-  vars_prompt
+  vars_prompt:
   - name: wishes
     prompt: please enter wishes
     private: false  
