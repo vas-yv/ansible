@@ -70,4 +70,15 @@
       msg: "before convert {{my_list}}"
   - name: after convert
     ansible.builtin.debug:
-      msg: "after convert {{my_list | items2dict}}"            
+      msg: "after convert {{my_list | items2dict}}"
+
+- name: demo on loops
+  hosts: localhost
+  tasks:
+  - name: print names
+    ansible.builtin.debug:
+      msg: "Hello {{item}}"
+    loop
+    - linux
+    - ansible
+    - docker                 
