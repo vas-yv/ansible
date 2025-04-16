@@ -39,4 +39,19 @@
   tasks:
   - name: find out min age and max age
     ansible.builtin.debug:
-      msg: "{{ages| min}}, {{ages | max}}"                        
+      msg: "{{ages| min}}, {{ages | max}}"
+
+- name: convert dictionary to items/ list
+  hosts: localhost
+  vars:
+  my_dict: #this is called dictionary or map or ketvalue pairs
+    course: Ansible
+    trainer: vasu
+    duration: 120hrs
+  tasks:
+  - name: before convert
+    ansible.builtin.debug:
+      msg: "before convert: {{my_dict}}"
+  - name: after convert
+    ansible.builtin.debug:
+      msg: "after convert: {{my_dict | dict2items}}"                                    
