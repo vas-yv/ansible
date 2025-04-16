@@ -78,7 +78,7 @@
   - name: print names
     ansible.builtin.debug:
       msg: "Hello {{item}}"
-    loop
+    loop:
     - linux
     - ansible
     - docker                 
